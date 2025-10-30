@@ -1,0 +1,20 @@
+# Ignore build and CMake files
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.cbp
+*.o
+*.obj
+*.exe
+*.out
+
+# Ignore dataset files
+data/*.csv
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore macOS system files
+.DS_Store
