@@ -68,7 +68,7 @@ void displayTopMovies(const vector<Movie>& movies, int n) {
 
     for (int i = 0; i < n && i < (int)movies.size(); ++i) {
         cout << i + 1 << ". " << movies[i].title
-             << " (" << movies[i].year << ")  ⭐ "
+             << " (" << movies[i].year << ")   "
              << movies[i].rating << " | " << movies[i].length << " mins\n";
     }
 }
