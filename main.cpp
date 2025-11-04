@@ -9,7 +9,7 @@ void heapSort(vector<Movie>& movies, int fieldChoice);
 
 int main() {
     cout << "=============================" << endl;
-    cout << "   🎬 MOVIE RANKS   " << endl;
+    cout << "    MOVIE RANKS   " << endl;
     cout << "=============================" << endl;
 
     // Load dataset
@@ -49,8 +49,8 @@ int main() {
     auto end = chrono::high_resolution_clock::now();
     double duration = chrono::duration<double>(end - start).count();
 
-    cout << "\n✅ Sorting complete!" << endl;
-    cout << "⏱️  Runtime: " << duration << " seconds\n" << endl;
+    cout << "\n Sorting complete!" << endl;
+    cout << "  Runtime: " << duration << " seconds\n" << endl;
 
     // display the result
     displayTopMovies(movies, 10);
