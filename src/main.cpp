@@ -14,7 +14,7 @@ int main() {
     cout << "   🎬 MOVIE RANKS   " << endl;
     cout << "=============================" << endl;
 
-    // Load dataset
+    // load dataset
     string filename = "data/imdb-dataset.csv";
     vector<Movie> movies = loadMovies(filename);
 
@@ -33,27 +33,20 @@ int main() {
 
     cout << "\nSorting in progress...\n";
 
-    // Timer start
+    // timer start
     auto start = chrono::high_resolution_clock::now();
 
     // replace later with mergeSort() or heapSort() - just for testing rn
-    if (fieldChoice == 1) { // sort by rating
-        sort(movies.begin(), movies.end(), [](const Movie& a, const Movie& b) {
-            return a.rating > b.rating;
-        });
+    if (algoChoice == 1) { // Merge Sort
+        cout << "\nUsing Merge Sort...\n";
+        mergeSortRecursive(movies, 0, movies.size() - 1, fieldChoice);
     }
-    else if (fieldChoice == 2) { // sort by length
-        sort(movies.begin(), movies.end(), [](const Movie& a, const Movie& b) {
-            return a.length > b.length;
-        });
-    }
-    else if (fieldChoice == 3) { // sort by release year
-        sort(movies.begin(), movies.end(), [](const Movie& a, const Movie& b) {
-            return a.year > b.year;
-        });
+    else if (algoChoice == 2) { // Heap Sort
+        cout << "\nUsing Heap Sort...\n";
+        heapSort(movies, fieldChoice);
     }
     else {
-        cerr << "Invalid field choice." << endl;
+        cerr << "Invalid algorithm choice." << endl;
         return 1;
     }
 
@@ -61,8 +54,8 @@ int main() {
     auto end = chrono::high_resolution_clock::now();
     double duration = chrono::duration<double>(end - start).count();
 
-    cout << "\n✅ Sorting complete!" << endl;
-    cout << "⏱️  Runtime: " << duration << " seconds\n" << endl;
+    cout << "\nSorting complete!" << endl;
+    cout << "Runtime: " << duration << " seconds\n" << endl;
 
     // display the result
     displayTopMovies(movies);

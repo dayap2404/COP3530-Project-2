@@ -3,4 +3,4 @@
 #include "movie.h"
 using namespace std;
 
-void heapSort(vector<Movie>& movies);
+void heapSort(vector<Movie>& movies, int fieldChoice);
